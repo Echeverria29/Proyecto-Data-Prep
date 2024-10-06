@@ -1,6 +1,6 @@
 # Proyecto de Descarga y Preparación de Datos para Data Prep
 Este proyecto tiene como objetivo descargar, descomprimir y procesar archivos desde una página web pública, convertir los archivos de texto a formato CSV y prepararlos para ser limpiados en Data Prep, una herramienta visual de procesamiento de datos.
-
+![](https://github.com/Proyecto-de-Descarga-y-Preparaci-n-de-Datos-para-Data-Prep/blob/main/dataprep.png)
 # Descripción del Proyecto 🚀
 El proyecto descarga archivos desde una página web utilizando requests y BeautifulSoup, descomprime el contenido en el escritorio local y convierte archivos de texto a formato CSV para un análisis más fácil. Luego, se eliminan los archivos temporales, dejando solo los archivos necesarios para su posterior procesamiento en Data Prep.
 
