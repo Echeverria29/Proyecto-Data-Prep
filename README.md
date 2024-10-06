@@ -29,7 +29,8 @@ Configura las rutas locales donde se descargarán y guardarán los archivos CSV 
 # Ejecución del Proyecto ⚙️
 Descargar y Descomprimir: Ejecuta la función function_data3_local para descargar el archivo ZIP desde la página web, descomprimir los archivos y convertir los archivos de texto a formato CSV.
 
-# Preparar Archivos para Data Prep: Los archivos resultantes estarán listos para ser cargados y limpiados utilizando la herramienta visual Data Prep.
+# Preparar Archivos para Data Prep:
+Los archivos resultantes estarán listos para ser cargados y limpiados utilizando la herramienta visual Data Prep.
 
 # Objetivo Final 🎯
 El objetivo de este proyecto es preparar los datos descargados para su limpieza y procesamiento utilizando Data Prep, una herramienta visual que facilita la depuración y transformación de datos, asegurando que los datos estén en el formato correcto (CSV) y listos para el análisis.
