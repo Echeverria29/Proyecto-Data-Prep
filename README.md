@@ -1,46 +1,62 @@
-# Proyecto de Descarga y Preparación de Datos para Data Prep
-Este proyecto tiene como objetivo descargar, descomprimir y procesar archivos desde una página web pública, convertir los archivos de texto a formato CSV y prepararlos para ser limpiados en Data Prep, una herramienta visual de procesamiento de datos.
-![](https://github.com/Echeverria29/Proyecto-de-Descarga-y-Preparaci-n-de-Datos-para-Data-Prep/blob/main/dataprep.png)
-# Descripción del Proyecto 🚀
-El proyecto descarga archivos desde una página web utilizando requests y BeautifulSoup, descomprime el contenido en el escritorio local y convierte archivos de texto a formato CSV para un análisis más fácil. Luego, se eliminan los archivos temporales, dejando solo los archivos necesarios para su posterior procesamiento en Data Prep.
+# Proyecto de Limpieza de Datos con Data Prep
 
-# Arquitectura de la Solución 🏗️
-Requests: Utilizado para realizar solicitudes HTTP y descargar archivos.
-BeautifulSoup: Para extraer enlaces de descarga desde la página web.
-Pandas: Utilizado para la conversión de archivos de texto a CSV.
-OS y ZipFile: Para el manejo de archivos locales y descompresión.
-Archivos de Código
-Función: function_data3_local
-Esta función realiza una solicitud GET a una página web de transporte público, extrae el enlace del archivo ZIP, lo descarga y descomprime en el directorio especificado. Además, convierte los archivos de texto descargados a formato CSV.
+Este proyecto utiliza Google Cloud Data Prep para buscar y limpiar datasets almacenados en Cloud Storage. La herramienta permite realizar procesos de limpieza de datos de manera eficiente, eliminando duplicados, valores nulos y estandarizando los datos para su posterior análisis.
 
-# Pre-requisitos 📋
-Python 3.x: Para ejecutar el código y utilizar las bibliotecas necesarias.
-Pandas: Para manipulación de datos.
-Requests: Para descargar archivos desde la web.
-BeautifulSoup: Para realizar scraping de la página web.
-ZipFile: Para manejar archivos comprimidos.
-# Instalación 🔧
-Asegúrate de tener instaladas las bibliotecas necesarias ejecutando:
-bash
-Copiar código
-pip install pandas requests beautifulsoup4
-Configura las rutas locales donde se descargarán y guardarán los archivos CSV y TXT.
+![](images/dataprep.png)
 
-# Ejecución del Proyecto ⚙️
-Descargar y Descomprimir: Ejecuta la función function_data3_local para descargar el archivo ZIP desde la página web, descomprimir los archivos y convertir los archivos de texto a formato CSV.
+## Contenido
+- [Requisitos](#requisitos)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Instrucciones de Ejecución](#instrucciones-de-ejecución)
 
-# Preparar Archivos para Data Prep:
-Los archivos resultantes estarán listos para ser cargados y limpiados utilizando la herramienta visual Data Prep.
+---
 
-# Objetivo Final 🎯
-El objetivo de este proyecto es preparar los datos descargados para su limpieza y procesamiento utilizando Data Prep, una herramienta visual que facilita la depuración y transformación de datos, asegurando que los datos estén en el formato correcto (CSV) y listos para el análisis.
+## Requisitos
 
-# Construido con 🛠️
-Pandas - Para manipulación de datos y conversión de archivos de texto a CSV.
-Requests - Para manejar las solicitudes HTTP.
-BeautifulSoup - Para extraer enlaces y realizar scraping de páginas web.
-OS y ZipFile - Para manejo de archivos y descompresión de archivos ZIP.
-# Autor ✒️
-Orlando Echeverría Hernández
-Expresiones de Gratitud 🎁
-Comparte este proyecto con otros.
+Para ejecutar este proyecto, necesitas:
+
+- **Acceso a Google Cloud Platform (GCP)**: Con permisos para acceder a Cloud Storage y Data Prep.
+- **Google Cloud Data Prep**: Herramienta para la preparación y limpieza de datos.
+- **Python**: Para ejecutar scripts adicionales relacionados con la limpieza de datos.
+
+Asegúrate de tener configurado el entorno de GCP y acceso a los buckets de Cloud Storage.
+
+## Estructura del Proyecto
+
+El proyecto está organizado de la siguiente manera:
+
+- **files/**
+  Contiene archivos relacionados con el proyecto:
+  - `webscraping.rar` - Archivos descargados desde el proceso de scraping.
+
+- **images/**
+  Contiene imágenes del proyecto:
+  - `dataprep.png` - Ejemplo de limpieza de datos en Data Prep.
+
+- **scripts/**
+  Scripts Python del proyecto:
+  - `limpieza_datos.py` - Script para realizar limpieza de datos adicional a través de Python.
+
+## Instrucciones de Ejecución
+
+### Limpieza de Datos en Data Prep
+
+1. Accede a Google Cloud Data Prep desde tu cuenta de GCP.
+2. Conecta Data Prep a tu bucket de Cloud Storage donde se encuentran los datasets.
+3. Carga el dataset y aplica las siguientes transformaciones:
+   - Eliminar valores duplicados.
+   - Rellenar o eliminar valores nulos.
+   - Estandarizar formatos de datos (fechas, números, etc.).
+4. Guarda el dataset limpio en un nuevo bucket de Cloud Storage.
+
+### Limpieza Adicional con Python
+
+1. Descarga los archivos procesados desde Data Prep.
+2. Coloca los archivos en la carpeta `files/` del proyecto.
+3. Ejecuta el script `limpieza_datos.py` para realizar una limpieza adicional:
+   ```bash
+   python scripts/limpieza_datos.py
+   ```
+4. Los datos finales se guardarán en la misma carpeta `files/` con un sufijo indicando que han sido procesados.
+
+---
